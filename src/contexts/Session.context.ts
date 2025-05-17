@@ -1,5 +1,5 @@
-import { createContext } from "react";
-import type { SessionData } from "@/types/session.type";
+import { createContext } from 'react';
+import type { SessionData } from '@/types/session.type';
 
 type SessionContextValue = {
   session: SessionData[];

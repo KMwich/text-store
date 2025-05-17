@@ -1,6 +1,6 @@
-import { FluentProvider, makeStyles, tokens, webLightTheme } from "@fluentui/react-components";
-import SessionProvider from "./porviders/SessionProvider";
-import Router from "./Router";
+import { FluentProvider, makeStyles, tokens, webLightTheme } from '@fluentui/react-components';
+import SessionProvider from './porviders/SessionProvider';
+import Router from './Router';
 
 function App() {
   const styles = useStyles();

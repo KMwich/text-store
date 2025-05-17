@@ -1,8 +1,8 @@
-import { useCallback, useEffect, useMemo, useState, type PropsWithChildren } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { StoreContext } from "@/contexts/Store.context";
-import type { StoreData } from "@/types/store.type";
-import useSession from "@/hooks/useSession";
+import { useCallback, useEffect, useMemo, useState, type PropsWithChildren } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { StoreContext } from '@/contexts/Store.context';
+import type { StoreData } from '@/types/store.type';
+import useSession from '@/hooks/useSession';
 
 export default function StoreProvider({ children }: Readonly<PropsWithChildren>) {
   const { session: sessions } = useSession();
@@ -14,7 +14,7 @@ export default function StoreProvider({ children }: Readonly<PropsWithChildren>)
   useEffect(() => {
     const id = params.id;
 
-    if (!id || !sessions.length || sessions.every((session) => session.id !== id)) return navigate("/") && undefined;
+    if (!id || !sessions.length || sessions.every((session) => session.id !== id)) return navigate('/') && undefined;
 
     setSession(id);
   }, [sessions, params.id, navigate, setSession]);
@@ -27,10 +27,10 @@ export default function StoreProvider({ children }: Readonly<PropsWithChildren>)
     };
 
     callback();
-    window.addEventListener("storage", callback);
+    window.addEventListener('storage', callback);
 
     return () => {
-      window.removeEventListener("storage", callback);
+      window.removeEventListener('storage', callback);
     };
   }, [session, setStore]);
 

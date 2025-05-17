@@ -1,10 +1,10 @@
-import { makeStyles, Body1, tokens, Button } from "@fluentui/react-components";
-import Card from "@/components/Card";
-import useSession from "@/hooks/useSession";
-import { useNavigate } from "react-router-dom";
-import { useCallback, useMemo } from "react";
-import NewSession from "@/components/NewSession";
-import { DeleteFilled } from "@fluentui/react-icons";
+import { makeStyles, Body1, tokens, Button } from '@fluentui/react-components';
+import Card from '@/components/Card';
+import useSession from '@/hooks/useSession';
+import { useNavigate } from 'react-router-dom';
+import { useCallback, useMemo } from 'react';
+import NewSession from '@/components/NewSession';
+import { DeleteFilled } from '@fluentui/react-icons';
 
 export default function SessionPage() {
   const styles = useStyles();
@@ -50,12 +50,12 @@ export default function SessionPage() {
 
 const useStyles = makeStyles({
   root: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "center",
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
     gap: tokens.spacingVerticalM,
   },
   session: {
-    wordBreak: "break-all",
+    wordBreak: 'break-all',
   },
 });

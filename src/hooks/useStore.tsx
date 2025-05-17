@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import { StoreContext } from "@/contexts/Store.context";
+import { useContext } from 'react';
+import { StoreContext } from '@/contexts/Store.context';
 
 export default function useStore() {
-  const store = useContext(StoreContext)
+  const store = useContext(StoreContext);
 
   if (!store) throw new Error('StoreProvider is required');
 

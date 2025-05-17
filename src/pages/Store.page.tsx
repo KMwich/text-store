@@ -1,10 +1,10 @@
-import { Button, makeStyles, tokens } from "@fluentui/react-components";
-import useStore from "@/hooks/useStore";
-import NewStore from "@/components/NewStore";
-import StoreProvider from "@/porviders/StoreProvider";
-import { useCallback, useMemo } from "react";
-import StoreCard from "@/components/StoreCard";
-import { DeleteFilled } from "@fluentui/react-icons";
+import { Button, makeStyles, tokens } from '@fluentui/react-components';
+import useStore from '@/hooks/useStore';
+import NewStore from '@/components/NewStore';
+import StoreProvider from '@/porviders/StoreProvider';
+import { useCallback, useMemo } from 'react';
+import StoreCard from '@/components/StoreCard';
+import { DeleteFilled } from '@fluentui/react-icons';
 
 function StoreComponent() {
   const styles = useStyles();
@@ -47,11 +47,11 @@ export default function StorePage() {
 
 const useStyles = makeStyles({
   root: {
-    display: "flex",
-    flexWrap: "wrap",
+    display: 'flex',
+    flexWrap: 'wrap',
     gap: tokens.spacingVerticalM,
   },
   store: {
-    wordBreak: "break-all",
+    wordBreak: 'break-all',
   },
 });

@@ -1,7 +1,7 @@
-import type { StoreData } from "@/types/store.type";
-import { Body1, makeStyles, type CardProps } from "@fluentui/react-components";
-import { useCallback, useState } from "react";
-import Card from "./Card";
+import type { StoreData } from '@/types/store.type';
+import { Body1, makeStyles, type CardProps } from '@fluentui/react-components';
+import { useCallback, useState } from 'react';
+import Card from './Card';
 
 type StoreCardProps = CardProps & {
   store: StoreData;
@@ -9,16 +9,17 @@ type StoreCardProps = CardProps & {
 
 export default function StoreCard({ store, ...props }: Readonly<StoreCardProps>) {
   const styles = useStyles();
-  const [copied, setCopied] = useState("")
+  const [copied, setCopied] = useState('');
 
   const onStoreSelect = useCallback((data: string) => {
-    navigator.clipboard.writeText(data)
+    navigator.clipboard
+      .writeText(data)
       .then(() => {
-        setCopied("The text is copied!!")
+        setCopied('The text is copied!!');
 
         setTimeout(() => {
-          setCopied("")
-        }, 2000)
+          setCopied('');
+        }, 2000);
       })
       .catch();
   }, []);
@@ -32,6 +33,6 @@ export default function StoreCard({ store, ...props }: Readonly<StoreCardProps>)
 
 const useStyles = makeStyles({
   store: {
-    wordBreak: "break-all",
+    wordBreak: 'break-all',
   },
 });

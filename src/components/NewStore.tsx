@@ -1,20 +1,34 @@
-import { Dialog, DialogTrigger, DialogSurface, DialogBody, DialogTitle, DialogContent, DialogActions, Button, Field, Input, type InputProps, tokens, makeStyles } from "@fluentui/react-components";
-import { Add48Filled } from "@fluentui/react-icons";
-import { useCallback, useState } from "react";
-import { v4 as uuid } from "uuid";
-import Card from "./Card";
-import useStore from "@/hooks/useStore";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogSurface,
+  DialogBody,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Button,
+  Field,
+  Input,
+  type InputProps,
+  tokens,
+  makeStyles,
+} from '@fluentui/react-components';
+import { Add48Filled } from '@fluentui/react-icons';
+import { useCallback, useState } from 'react';
+import { v4 as uuid } from 'uuid';
+import Card from './Card';
+import useStore from '@/hooks/useStore';
 
 export default function NewStore() {
   const styles = useStyles();
   const { store, setStore } = useStore();
-  const [data, setData] = useState("");
+  const [data, setData] = useState('');
 
   const createSession = useCallback(() => {
     setStore(store.concat([{ id: uuid(), data }]));
   }, [data, store, setStore]);
 
-  const onDataChange = useCallback<NonNullable<InputProps["onChange"]>>(
+  const onDataChange = useCallback<NonNullable<InputProps['onChange']>>(
     (_, data) => {
       setData(data.value);
     },
@@ -59,6 +73,6 @@ const useStyles = makeStyles({
     '@media screen and max-width: 767px': {
       margin: tokens.spacingVerticalM,
       marginTop: 'auto',
-    }
-  }
-})
+    },
+  },
+});

@@ -1,25 +1,25 @@
-import { useCallback, useEffect, useMemo, useState, type PropsWithChildren } from "react";
-import { SessionContext } from "@/contexts/Session.context";
-import type { SessionData } from "react-router-dom";
+import { useCallback, useEffect, useMemo, useState, type PropsWithChildren } from 'react';
+import { SessionContext } from '@/contexts/Session.context';
+import type { SessionData } from 'react-router-dom';
 
 export default function SessionProvider({ children }: Readonly<PropsWithChildren>) {
   const [session, setSession] = useState<string>();
 
   useEffect(() => {
     const callback = () => {
-      setSession(localStorage.getItem("session") ?? undefined);
+      setSession(localStorage.getItem('session') ?? undefined);
     };
 
     callback();
-    window.addEventListener("storage", callback);
+    window.addEventListener('storage', callback);
 
     return () => {
-      window.removeEventListener("storage", callback);
+      window.removeEventListener('storage', callback);
     };
   }, [setSession]);
 
-    useEffect(() => {
-    if (!session ) return;
+  useEffect(() => {
+    if (!session) return;
 
     localStorage.setItem('session', session);
   }, [session]);

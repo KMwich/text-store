@@ -1,5 +1,5 @@
-import { createContext } from "react";
-import type { StoreData } from "@/types/store.type";
+import { createContext } from 'react';
+import type { StoreData } from '@/types/store.type';
 
 type StoreContextValue = {
   store: StoreData[];
